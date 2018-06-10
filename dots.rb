@@ -8,6 +8,6 @@ dep 'dots-repo' do
   }
 
   meet {
-    get "https://github.com/its-rigs/dots.git", :to => '~/.dots'
+    git "https://github.com/its-rigs/dots.git", :to => '~/.dots'
   }
 end
