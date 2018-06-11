@@ -1,6 +1,6 @@
 dep 'dots' do
-  requires 'dot-gitconfig'
-  requires 'dot-gitignore'
+  requires 'gitconfig.dot'
+  requires 'gitignore.dot'
 end
 
 dep 'dots-repo' do
@@ -13,26 +13,27 @@ dep 'dots-repo' do
   }
 end
 
-dep 'dot-gitconfig' do
-  requires 'dots-repo'
+meta 'dot' do
+  accepts_value_for :from
+  accepts_value_for :to
 
-  met? {
-    '~/.gitconfig'.p.exists?
-  }
+  template {
+    met? {
+      "#{to}".p.exists?
+    }
 
-  meet {
-    shell 'ln -s ~/.dots/gitconfig ~/.gitconfig'
+    meet {
+      shell("ln -s #{from} #{to}")
+    }
   }
 end
 
-dep 'dot-gitignore' do
-  requires 'dots-repo'
+dep 'gitconfig.dot' do
+  from '~/.dots/gitconfig'
+  to '~/.gitconfig'
+end
 
-  met? {
-    '~/.gitignore'.p.exists?
-  }
-
-  meet {
-    shell 'ln -s ~/.dots/gitignore ~/.gitignore'
-  }
+dep 'gitignore.dot' do
+  from '~/.dots/gitignore'
+  to '~/.gitignore'
 end
