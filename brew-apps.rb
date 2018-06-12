@@ -21,7 +21,7 @@ end
 
 dep 'zsh.bin do
   met? {
-    shell('$(brew --prefix zsh)').p.exists?
+    shell('brew --prefix zsh').p.exists?
   }
 end
 
