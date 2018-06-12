@@ -1,8 +1,9 @@
 brew_apps = %w{
   git
-  tldr
   htop
   tig
+  tldr
+  zsh
 }
 
 brew_apps.each do |app|
