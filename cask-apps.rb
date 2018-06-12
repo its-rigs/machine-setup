@@ -1,22 +1,17 @@
 meta :cask do
-  def strip_template_name
-    return name.chomp(".cask")
-  end
-
   def ensure_cask
-    shell "brew tap caskroom/cask"
     return if `brew tap`.include?('caskroom/cask')
     shell "brew tap caskroom/cask"
   end
 
   template {
-    meet {
-      ensure_cask
-      shell "brew cask install #{strip_template_name}"
+    met? {
+      `brew cask list`.include? basename
     }
 
-    met? {
-      `brew cask list`.include? strip_template_name
+    meet {
+      ensure_cask
+      shell "brew cask install #{basename}"
     }
   }
 end
