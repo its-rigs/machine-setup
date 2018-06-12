@@ -19,7 +19,7 @@ dep 'blackbox.bin' do
   provides 'blackbox_initialize'
 end
 
-dep 'zsh.bin do
+dep 'zsh.bin' do
   met? {
     shell('brew --prefix zsh').p.exists?
   }
