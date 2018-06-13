@@ -5,3 +5,9 @@ dep 'rigs' do
     'dots'
   ]
 end
+
+dep 'rigs-sudo', :username do
+  requires [
+    'zsh'.with(username),
+  ]
+end

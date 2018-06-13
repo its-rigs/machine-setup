@@ -1,6 +1,10 @@
 dep 'dots' do
-  requires 'gitconfig.dot'
-  requires 'gitignore.dot'
+  requires [
+    'gitconfig.dot',
+    'gitignore.dot',
+    'zshrc.dot',
+    'zsh-folder.dot'
+  ]
 end
 
 dep 'dots-repo' do
@@ -36,4 +40,14 @@ end
 dep 'gitignore.dot' do
   from '~/.dots/gitignore'
   to '~/.gitignore'
+end
+
+dep 'zshrc.dot' do
+  from '~/.dots/zsh/zshrc'
+  to '~/.zshrc'
+end
+
+dep 'zsh-folder.dot' do
+  from '~/.dots/zsh/zsh/'
+  to '~/.zsh/'
 end
