@@ -48,6 +48,6 @@ dep 'zshrc.dot' do
 end
 
 dep 'zsh-folder.dot' do
-  from '~/.dots/zsh/zsh/'
-  to '~/.zsh/'
+  from '~/.dots/zsh/zsh'
+  to '~/.zsh'
 end
