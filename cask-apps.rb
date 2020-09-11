@@ -1,12 +1,12 @@
 meta :cask do
   def ensure_cask
-    return if `brew tap`.include?('caskroom/cask')
-    shell "brew tap caskroom/cask"
+    return if `brew tap`.include?('homebrew/cask')
+    shell "brew tap homebrew/cask"
   end
 
   template {
     met? {
-      `brew cask list`.include? basename
+      `brew list --cask`.include? basename
     }
 
     meet {
@@ -29,7 +29,6 @@ cask_apps = %w{
   spotify
   sublime-text
   transmission
-  virtualbox
   visual-studio-code
   vlc
   whatsapp
