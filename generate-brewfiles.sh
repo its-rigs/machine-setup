@@ -17,7 +17,7 @@ print_bold () {
 
 print_update () {
   tput rc
-  tput el
+  tput cd # clear to end of screen
   print_line "\t${1}"
 }
 
