@@ -181,7 +181,6 @@ fi
 
 # TODO:
 # zsh setup
-# fix starting dir issue
 
 tput rc
 tput cd # clear to end of screen
