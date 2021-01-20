@@ -143,6 +143,7 @@ if [ $can_download = "y" ]; then
   ln -sf "$dotsdir/gitignore" ~/.gitignore
   ln -sf "$dotsdir/zsh/zsh" ~/.zsh
   ln -sf "$dotsdir/zsh/zshrc" ~/.zshrc
+  ln -sf "$dotsdir/vim/vimrc" ~/.vimrc
 else
   print_error "Please add SSH key to github and re-run script\n"
   exit 1
@@ -181,6 +182,7 @@ fi
 
 # TODO:
 # zsh setup
+# allow hold key 
 
 tput rc
 tput cd # clear to end of screen
