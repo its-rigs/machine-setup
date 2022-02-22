@@ -116,36 +116,6 @@ fi
 
 
 # ------------------------------------------------------------------------------
-# Install Homebrew
-# ------------------------------------------------------------------------------
-
-print_task "Checking Homebrew installed"
-if [ ! -d /usr/local/Homebrew ]; then
-  print_subtask "Installing Homebrew"
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-
-
-# ------------------------------------------------------------------------------
-# Install applications
-# ------------------------------------------------------------------------------
-cd ~/$PERSONAL_CODE/machine-setup
-
-print_task "Installing apps via Homebrew"
-brew bundle install --file=brewfile.standard --no-lock
-
-print_task "Installing Mac apps via Homebrew"
-read -p "Have you signed into the App Store? y/n: " can_mas
-
-if [ $can_mas = "y" ]; then
-  brew bundle install --file=brewfile.mas --no-lock
-else
-  print_error "Please sign in to the App Store and re-run script"
-  exit 1
-fi
-
-
-# ------------------------------------------------------------------------------
 # DOWNLOAD AND SETUP CONFIGS
 # ------------------------------------------------------------------------------
 
@@ -176,6 +146,36 @@ if [ $can_download = "y" ]; then
   ln -sf "$dotsdir/vim/vimrc" ~/.vimrc
 else
   print_error "Please add SSH key to github and re-run script\n"
+  exit 1
+fi
+
+
+# ------------------------------------------------------------------------------
+# Install Homebrew
+# ------------------------------------------------------------------------------
+
+print_task "Checking Homebrew installed"
+if [ ! -d /usr/local/Homebrew ]; then
+  print_subtask "Installing Homebrew"
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+
+# ------------------------------------------------------------------------------
+# Install applications
+# ------------------------------------------------------------------------------
+cd ~/$PERSONAL_CODE/machine-setup
+
+print_task "Installing apps via Homebrew"
+brew bundle install --file=brewfile.standard --no-lock
+
+print_task "Installing Mac apps via Homebrew"
+read -p "Have you signed into the App Store? y/n: " can_mas
+
+if [ $can_mas = "y" ]; then
+  brew bundle install --file=brewfile.mas --no-lock
+else
+  print_error "Please sign in to the App Store and re-run script"
   exit 1
 fi
 
