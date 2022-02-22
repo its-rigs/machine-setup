@@ -77,7 +77,7 @@ if [ ! -f $SSH_KEY ]; then
 
   print_subtask "Adding SSH key to agent"
   eval "$(ssh-agent -s)"
-  ssh-add -K $SSH_KEY
+  ssh-add --apple-use-keychain $SSH_KEY
 
   print_subtask "Copying public key to clipboard"
   pbcopy < "$SSH_KEY.pub"
