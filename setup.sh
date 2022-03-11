@@ -182,7 +182,6 @@ fi
 
 
 # TODO:
-# zsh setup
 # allow hold key 
 
 tput rc
