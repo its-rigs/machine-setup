@@ -144,6 +144,7 @@ if [ $can_download = "y" ]; then
   ln -sf "$dotsdir/zsh/zsh" ~/.zsh
   ln -sf "$dotsdir/zsh/zshrc" ~/.zshrc
   ln -sf "$dotsdir/vim/vimrc" ~/.vimrc
+  ln -sf "$dotsdir/vim/vim" ~/.vim
 else
   print_error "Please add SSH key to github and re-run script\n"
   exit 1
