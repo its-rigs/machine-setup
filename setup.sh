@@ -156,7 +156,7 @@ fi
 # ------------------------------------------------------------------------------
 
 print_task "Checking Homebrew installed"
-if [ ! -d /usr/local/Homebrew ]; then
+if [ ! -d /opt/homebrew ]; then
   print_subtask "Installing Homebrew"
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
@@ -181,8 +181,11 @@ else
 fi
 
 
-# TODO:
-# allow hold key 
+# ------------------------------------------------------------------------------
+# Allow key repeat
+# ------------------------------------------------------------------------------
+print_task "Setting key repeat"
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 tput rc
 tput cd # clear to end of screen
