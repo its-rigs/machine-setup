@@ -2,29 +2,20 @@
 
 set -e
 
+working_dir=$(pwd)
+
 source scripts/print.sh
-DOTS_DIR=$1
 
 # ------------------------------------------------------------------------------
 # DOWNLOAD AND SETUP CONFIGS
 # ------------------------------------------------------------------------------
 
-print_task "Downloading configuration files"
+print_task "Setup configuration files"
 
 print_subtask "Link git files"
-ln -sf "$DOTS_DIR/gitconfig" ~/.gitconfig
-ln -sf "$DOTS_DIR/gitignore" ~/.gitignore
+ln -sf "$working_dir/git/gitconfig" ~/.gitconfig
+ln -sf "$working_dir/git/gitignore" ~/.gitignore
 
-#   cd dots
-
-#   dotsdir=$(pwd)
-
-#   ln -sf "$dotsdir/zsh/zsh" ~/.zsh
-#   ln -sf "$dotsdir/zsh/zshrc" ~/.zshrc
-#   ln -sf "$dotsdir/vim/vimrc" ~/.vimrc
-#   ln -sf "$dotsdir/vim/vim" ~/.vim
-# else
-#   print_error "Please add SSH key to github and re-run script\n"
-#   exit 1
-# fi
-
+print_subtask "Link zsh files"
+ln -sf "$working_dir/shell/zsh" ~/.zsh
+ln -sf "$working_dir/shell/zshrc" ~/.zshrc

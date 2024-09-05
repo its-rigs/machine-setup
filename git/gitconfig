@@ -1,0 +1,33 @@
+[user]
+    name = Luke Rigby
+    email = 1016498+its-rigs@users.noreply.github.com
+
+[color]
+    ui = true
+
+[init]
+    defaultBranch = main
+
+[alias]
+    a = add
+    aa = add -A
+    ap = add -p
+    s = status
+    pr = pull -r
+    pu = push
+    ca = commit --amend
+    cm = commit -m
+    c = commit
+    co = checkout
+    cob = checkout -b
+    d = diff
+    r = rebase
+    rs = restore --staged
+    who = blame
+    st = stash
+    stu = stash -u
+    stp = stash pop
+
+[push]
+    autoSetupRemote = true
+

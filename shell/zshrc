@@ -1,0 +1,14 @@
+source ~/.zsh/setopt.zsh
+source ~/.zsh/exports.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/completion.zsh
+source ~/.zsh/colours.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/history.zsh
+source ~/.zsh/functions.zsh
+
+for f in ~/.zsh/work/*.zsh(N); do
+  if [ -f $f ]; then
+    source $f;
+  fi
+done
