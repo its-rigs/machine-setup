@@ -25,3 +25,7 @@ fi
 if [ ! -d ~/$CODE ]; then
   mkdir ~/$CODE
 fi
+
+if [ ! -d ~/.config ]; then
+  mkdir ~/.config
+fi

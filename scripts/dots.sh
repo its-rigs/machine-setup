@@ -16,4 +16,5 @@ ln -sf "$working_dir/git/gitconfig" ~/.gitconfig
 ln -sf "$working_dir/git/gitignore" ~/.gitignore
 
 print_subtask "Link zsh files"
+ln -sf "$working_dir/application-files/ohmyposh-theme.toml" ~/.config/ohmyposh-theme.toml
 ln -sf "$working_dir/shell/zshrc" ~/.zshrc
