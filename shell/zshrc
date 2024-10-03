@@ -157,3 +157,14 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+
+# -------------------------------------------------------------------
+# Extensions
+#   Add zsh files to include without checking into git
+# -------------------------------------------------------------------
+for f in ~/.zsh_extensions/*.zsh; do
+  if [ -f $f ]; then
+    source $f;
+  fi
+done
