@@ -33,8 +33,5 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.local/share/nvim
 
-print_subtask "Download NvChad"
-git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1
-
 print_subtask "Link nvim files"
-ln -sf "$working_dir/dotfiles/nvim" ~/.config/nvim/lua/custom
+ln -sf "$working_dir/dotfiles/nvim" ~/.config/nvim
