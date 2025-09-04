@@ -9,3 +9,6 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
 vim.g.mapleader = " "
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
