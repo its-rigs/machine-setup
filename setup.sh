@@ -1,30 +1,26 @@
 #!/bin/bash
 
+clear
+
 set -e
 
-source scripts/print.sh
+export SETUP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+source "$SETUP_DIR/scripts/utils.sh"
 
 # ------------------------------------------------------------------------------
 # Start setup
 # ------------------------------------------------------------------------------
-tput setaf 6
-print_bold "Starting setup:"
-tput setaf 7
+print_title "Starting setup"
+print_blank_line
 
-source scripts/settings.sh
-source scripts/applications.sh
-source scripts/folders.sh
-source scripts/ssh.sh
-
+source "$SETUP_DIR/scripts/os_settings.sh"
+source "$SETUP_DIR/scripts/applications.sh"
+source "$SETUP_DIR/scripts/dots.sh"
+source "$SETUP_DIR/scripts/ssh.sh"
 
 # ------------------------------------------------------------------------------
 # Finished setup
 # ------------------------------------------------------------------------------
-tput rc
-tput cd # clear to end of screen
+print_finished
 
-tput setaf 6
-print_line
-print_bold "Setup finished!"
-tput setaf 7

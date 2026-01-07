@@ -2,36 +2,27 @@
 
 set -e
 
-working_dir=$(pwd)
+DOT_FILES_DIR="$SETUP_DIR/dots"
 
-source scripts/print.sh
-
-# ------------------------------------------------------------------------------
-# SETUP CONFIGS
-# ------------------------------------------------------------------------------
-print_task "Setup configuration files"
-
-print_subtask "Link git files"
-ln -sf "$working_dir/git/gitconfig" ~/.gitconfig
-ln -sf "$working_dir/git/gitignore" ~/.gitignore
-
-print_subtask "Link zsh files"
-ln -sf "$working_dir/dotfiles/ohmyposh-theme.toml" ~/.config/ohmyposh-theme.toml
-ln -sf "$working_dir/shell/zshrc" ~/.zshrc
-
-print_subtask "Link tmux files"
-ln -sf "$working_dir/dotfiles/tmux.conf" ~/.tmux.conf
-
+stow_config() {
+  local package=$1
+  print_task "$package"
+  stow -d "$DOT_FILES_DIR" -t ~ "$package"
+  print_task_done
+}
 
 # ------------------------------------------------------------------------------
-# SETUP NVIM
+# Main
 # ------------------------------------------------------------------------------
-print_task "Setup Nvim"
 
-print_subtask "Cleanup any existing Nvim state"
-rm -rf ~/.config/nvim
-rm -rf ~/.local/state/nvim
-rm -rf ~/.local/share/nvim
+if ! is_installed "stow"; then
+  echo "Install stow first"
+  exit 1
+fi
 
-print_subtask "Link nvim files"
-ln -sf "$working_dir/dotfiles/nvim" ~/.config/nvim
+print_subtitle "Setup configuration files"
+
+stow_config git
+stow_config zsh
+stow_config nvim
+stow_config tmux

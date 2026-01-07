@@ -20,27 +20,22 @@ print () {
 # Main
 # ------------------------------------------------------------------------------
 
-CONFIGURATION_FOLDER=~/.configuration
-MACHINE_SETUP=machine-setup
-DOTS=dots
+PROJECTS_FOLDER=~/Projects
+MACHINE_SETUP="$PROJECTS_FOLDER/machine-setup"
 
-print "Creating configuration folder"
-
-if [ ! -d $CONFIGURATION_FOLDER ]; then
-  mkdir $CONFIGURATION_FOLDER
+print "Creating projects folder & downloading setup repo"
+if [ ! -d ~/Projects ]; then
+  mkdir "$PROJECTS_FOLDER"
 fi
 
-cd $CONFIGURATION_FOLDER
+cd "$PROJECTS_FOLDER"
 
-print "Downloading machine setup files"
-if [ ! -d $MACHINE_SETUP ]; then
-  git clone https://github.com/its-rigs/machine-setup.git
+if [ ! -d "$MACHINE_SETUP" ]; then
+  git clone https://github.com/its-rigs/machine-setup.git -q
+else
+  cd "$MACHINE_SETUP"
+  git pull
 fi
 
-print "Downloading dot files"
-if [ ! -d $DOTS ]; then
-  git clone https://github.com/its-rigs/dots.git
-fi
-
-cd $MACHINE_SETUP
-source setup.sh
+cd "$MACHINE_SETUP"
+source "setup.sh"
