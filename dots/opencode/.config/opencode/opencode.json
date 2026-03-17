@@ -1,5 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
-  "plugin": ["opencode-gemini-auth@latest"]
+  "model": "amazon-bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "provider": {
+    "amazon-bedrock": {
+      "options": {
+        "region": "us-west-2",
+        "profile": "BEDROCK_TOOLS"
+      }
+    }
+  }
 }
