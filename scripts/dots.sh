@@ -26,3 +26,4 @@ stow_config git
 stow_config zsh
 stow_config nvim
 stow_config tmux
+stow_config opencode

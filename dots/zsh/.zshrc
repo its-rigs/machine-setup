@@ -168,6 +168,13 @@ setopt hist_find_no_dups
 
 
 # -------------------------------------------------------------------
+# Custom PATHs
+#   Add custom bin directories to PATH
+# -------------------------------------------------------------------
+export PATH=/Users/luke/.opencode/bin:$PATH
+
+
+# -------------------------------------------------------------------
 # Extensions
 #   Add zsh files to include without checking into git
 # -------------------------------------------------------------------

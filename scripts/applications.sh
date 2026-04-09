@@ -6,8 +6,6 @@ print_subtitle "Setup applications"
 PACKAGES_CONF="$SETUP_DIR/packages.conf"
 
 
-
-
 # ------------------------------------------------------------------------------
 # Main
 # ------------------------------------------------------------------------------
@@ -27,6 +25,10 @@ if isMacOS; then
   print_task "Installing dev tools"
   install_packages_mac "${DEV_TOOLS[@]}"
   install_packages_mac_casks "${DEV_TOOLS_CASKS[@]}"
+  print_task_done
+
+  print_task "Installing opencode"
+  curl -fsSL https://opencode.ai/install | bash
   print_task_done
 
   print_task "Installing Tmux Plugin Manager (TPM)"

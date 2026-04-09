@@ -62,7 +62,10 @@ print_task () {
 print_task_done () {
   tput rc # restore cursor position
   tput cd # clear to end of screen
-  print_line "✅"
+
+  tput setaf 2
+  print_line "done"
+  tput setaf 7
 }
 
 print_subtask () {
