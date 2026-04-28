@@ -104,7 +104,7 @@ alias vim='nvim'
 # Env
 # -------------------------------------------------------------------
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
-export EDITOR="vim"
+export EDITOR=nvim
 
 # -------------------------------------------------------------------
 # Functions
