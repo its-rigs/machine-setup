@@ -1,4 +1,27 @@
+node_modules
+
+# Claude
+dots/claude/.claude/*
+!dots/claude/.claude/skills
+!dots/claude/.claude/CLAUDE.md
+!dots/claude/.claude/settings.json
+
+# dots/claude/.claude/backups/
+# dots/claude/.claude/cache/
+# dots/claude/.claude/downloads/
+# dots/claude/.claude/sessions/
+# dots/claude/.claude/history.jsonl
+
+# Credentials or tokens
+.claude.json
+.credentials.json
+*.key
+*.pem
+
+# May contain API tokens—review before tracking
+.claude/settings.local.json
+
+# OS files
 .DS_Store
 *.zwc
-
-node_modules
+Thumbs.db
