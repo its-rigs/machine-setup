@@ -103,8 +103,14 @@ alias vim='nvim'
 # -------------------------------------------------------------------
 # Env
 # -------------------------------------------------------------------
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export EDITOR=nvim
+
+# tmuxifier
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+
+# claude code
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # -------------------------------------------------------------------
 # Functions
